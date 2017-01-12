@@ -1,0 +1,12 @@
+- content_for :editor do
+  javascript:
+    var CKEDITOR_BASEPATH = "/components/ckeditor_4.5.5/";
+
+  = javascript_include_tag "/components/ckeditor_4.5.5/ckeditor"
+
+  - if !current_user.admin?
+    javascript:
+      CKEDITOR.config.customConfig = 'user.js';
+
+  javascript:
+    $(function(){ CkeditorOnPage.init() })

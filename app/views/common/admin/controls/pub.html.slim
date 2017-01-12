@@ -1,0 +1,2 @@
+- if current_user.try(:admin?)
+  = link_to 'Редактировать', [ :edit, @pub ], class: 'ptz--btn ptz--size-12'

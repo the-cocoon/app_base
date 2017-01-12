@@ -1,0 +1,3 @@
+= form_tag app_sbuscribe_path, method: :post, remote: :true, class: 'app-subscribe--form' do
+  = text_field_tag :email, '', class: 'ptz--input ptz--size-14 w200 app-subscribe--form-input', placeholder: 'Ваш Email'
+  = submit_tag 'Подписаться', class: 'ptz--btn ptz--size-14 ptz--btn--side-right app-subscribe--form-btn', autocomplete: :off

@@ -1,0 +1,18 @@
+= stylesheet_link_tag "mailers/app_layout"
+
+.app-mailer-layout--bg
+  .ma.w800.p40
+    table.ma.w100p.app-mailer-layout--table.fs16.ffa
+      tr
+        td
+          .app-mailer-layout--header.p20.tac.fs20
+            | Information from site.com
+      tr
+        td
+          .m20.mb40.b.tac.fs16= yield :title
+          .app-mailer-layout--body.p20
+            = yield
+      tr
+        td
+          .app-mailer-layout--footer.p20.tac
+            = Time.now.year
