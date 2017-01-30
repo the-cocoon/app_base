@@ -5,7 +5,6 @@ module AppBase
   class Engine < Rails::Engine
     config.autoload_paths << "#{ config.root }/app/controllers/concerns/"
     config.autoload_paths << "#{ config.root }/app/models/concerns/"
-
     initializer :add_base_paths do
       ActiveSupport.on_load(:active_record) do
         _root_ = ::AppBase::Engine.config.root
@@ -16,6 +15,8 @@ module AppBase
         _root_  = ::AppBase::Engine.config.root
         views = "app/views/app_base"
         prepend_view_path("#{ _root_ }/#{ views }" ) if respond_to?(:prepend_view_path)
+
+        ActionMailer::Base.preview_path = "#{ ::AppBase::Engine.config.root }/app/mailers"
       end
     end
   end
